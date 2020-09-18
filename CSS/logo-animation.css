@@ -7,5 +7,7 @@
 .logo {
   animation-name: logo;
   animation-duration: 5s;
+  animation-delay: 0.5s;
   animation-iteration-count: infinite;
+  filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.5));
 }
