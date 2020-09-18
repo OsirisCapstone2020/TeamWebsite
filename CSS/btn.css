@@ -1,0 +1,19 @@
+.btn-primary {
+  background: #516482;
+  border-color: #516482;
+}
+
+.btn-primary:disabled {
+  background: #516482;
+  border-color: #516482;
+}
+
+.btn-primary:active {
+  background: #051836;
+  border-color: #516482;
+}
+
+.btn-primary:active:disabled {
+  background: #516482;
+  border-color: #516482;
+}
