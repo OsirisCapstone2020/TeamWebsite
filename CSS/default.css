@@ -45,3 +45,9 @@ a:hover {
 .mw-50 {
   max-width: 50%;
 }
+
+.navbar {
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  box-shadow: 0.1rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+}
