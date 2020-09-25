@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b11c3d7e-532c-4eb2-9f11-09174473840d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CSS/logo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/osiris-team-standards.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/logo-animation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/btn.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/btn.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +31,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -41,7 +48,8 @@
       <updated>1600461767332</updated>
       <workItem from="1600461768690" duration="1756000" />
       <workItem from="1600463637455" duration="1804000" />
-      <workItem from="1600466292681" duration="1501000" />
+      <workItem from="1600466292681" duration="1569000" />
+      <workItem from="1601068026714" duration="1051000" />
     </task>
     <servers />
   </component>
