@@ -1,5 +1,6 @@
 .logo {
-  filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.5));
+  background: none;
+  border: none;
   transition: transform 500ms;
 }
 
@@ -12,6 +13,6 @@
   border: none;
 }
 
-.navbar-brand:active, .navbar-brand:focus {
+.logo:active, .logo:focus, .navbar-brand:active, .navbar-brand:focus {
   outline: none;
 }
