@@ -1,4 +1,8 @@
 function onTabChanged(tabUrl) {
+    if (!tabUrl.startsWith("./pages")) {
+        return;
+    }
+
     $("#content").load(tabUrl);
 
     const searchParams = new URLSearchParams(window.location.search);

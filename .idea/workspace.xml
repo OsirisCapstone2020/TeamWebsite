@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b11c3d7e-532c-4eb2-9f11-09174473840d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/desc.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/desc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,5 +67,9 @@
       <screen x="0" y="27" width="2560" height="1053" />
     </state>
     <state x="303" y="259" width="672" height="678" key="search.everywhere.popup/0.27.2560.1053@0.27.2560.1053" timestamp="1600463931415" />
+    <state x="365" y="459" width="540" height="186" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605906233688">
+      <screen x="0" y="27" width="2560" height="1053" />
+    </state>
+    <state x="365" y="459" width="540" height="186" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.2560.1053@0.27.2560.1053" timestamp="1605906233688" />
   </component>
 </project>
