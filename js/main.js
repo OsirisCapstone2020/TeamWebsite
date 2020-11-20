@@ -17,4 +17,7 @@ window.addEventListener('load', () => {
     if (tab) {
         onTabChanged(`${tab}.html`);
     }
+    else {
+        onTabChanged("./pages/home.html");
+    }
 });
