@@ -30,8 +30,9 @@
             <b>Image Storage</b>: Both the inputs and outputs of the ASC
             Processing Pipeline are larger-than-normal image files. To deal
             with this, we need dedicated storage. Team Osiris will integrate
-            Amazon's S3 into the application, decoupling storage from both the
-            UI and processing server. The UI will push pipeline input to the S3
+            <a target="_blank" href="https://aws.amazon.com/s3/">Amazon's S3</a>
+            into the application, decoupling storage from both the UI and
+            processing server. The UI will push pipeline input to the S3
             server, where the processing server will pull it down. After a
             processing command is complete, the processing server will push its
             output back to S3, where the UI can pick it up again.
