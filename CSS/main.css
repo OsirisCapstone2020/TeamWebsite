@@ -60,3 +60,8 @@ a:hover {
 .drop-shadow {
   filter: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.5));
 }
+
+#requirements li {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
