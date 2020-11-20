@@ -6,3 +6,12 @@
 .logo:hover {
   transform: scale(1.05);
 }
+
+.navbar-brand {
+  background: none;
+  border: none;
+}
+
+.navbar-brand:active, .navbar-brand:focus {
+  outline: none;
+}
