@@ -1,3 +1,52 @@
 <div>
     <h1 class="text-center">Technologies</h1>
+	<ul id="technologies" class="mx-auto mw-50">
+		<li>
+			<b>N8N:</b> To provide a web interface, we decided to use N8N. 
+			N8N provides an existing node and graphing interface, which can be
+			modified for our uses. We will add nodes for functions in ISIS, 
+			which the users will be able to drag and drop into place in the graph.
+			<br>
+			Alternatives we considered were Apache Airflow, which we decided 
+			against since we felt N8N had a better user interface for our purposes.
+		</li>
+		<br>
+		<li>
+			<b>Minio S3:</b> In order for the output of one node to be used as
+			the input to another, an intermediate storage step was needed. We
+			decided to use an Minio S3, which is compatible with Amazon S3. This
+			storage server will allow us to store data between each step of the pipeline.
+			<br>
+			Alternatives we considered were NFS (Network File System) and Ceph. 
+			We decided to go with an Amazon S3 based storage system because 
+			it would be easier to access remotely (the other solutions require 
+			a way to access internal servers), a larger storage capacity, data 
+			backup frequency, and available tools and APIs.
+		</li>
+		<br>
+		<li>
+			<b>Python:</b> For our main programming language, we decided to use 
+			Python. Our team memebers are the most familiar with Python, and 
+			there is a library for ISIS written in Python 
+			(<a href="https://github.com/USGS-Astrogeology/pysis">Pysis</a>). We 
+			will use Python to call ISIS3 commands in our pipeline.
+			
+			For calling commands, another alternative was NodeJS, but our team 
+			felt that Python was a better solution since we know Python better, 
+			Python is already used at the Astrogeology Science Center, and there 
+			are libraries available (like Pysis).
+		</li>
+		<br>
+		<li>
+			<b>NodeJS:</b> Since N8N uses NodeJS, in order to modify the N8N 
+			interface we will need to use NodeJS.
+		</li>
+		<br>
+		<li>
+			<b>Pysis:</b> 
+			<a href="https://github.com/USGS-Astrogeology/pysis">Pysis</a> is 
+			a library for calling ISIS3 commands in Python. We will the Pysis 
+			library to call the commands in our pipeline.
+		</li>
+	</ul>
 </div>
