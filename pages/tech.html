@@ -6,7 +6,7 @@
 			N8N provides an existing node and graphing interface, which can be
 			modified for our uses. We will add nodes for functions in ISIS, 
 			which the users will be able to drag and drop into place in the graph.
-			<br>
+			<br><br>
 			Alternatives we considered were Apache Airflow, which we decided 
 			against since we felt N8N had a better user interface for our purposes.
 		</li>
@@ -16,7 +16,7 @@
 			the input to another, an intermediate storage step was needed. We
 			decided to use an Minio S3, which is compatible with Amazon S3. This
 			storage server will allow us to store data between each step of the pipeline.
-			<br>
+			<br><br>
 			Alternatives we considered were NFS (Network File System) and Ceph. 
 			We decided to go with an Amazon S3 based storage system because 
 			it would be easier to access remotely (the other solutions require 
@@ -30,7 +30,7 @@
 			there is a library for ISIS written in Python 
 			(<a href="https://github.com/USGS-Astrogeology/pysis">Pysis</a>). We 
 			will use Python to call ISIS3 commands in our pipeline.
-			
+			<br><br>
 			For calling commands, another alternative was NodeJS, but our team 
 			felt that Python was a better solution since we know Python better, 
 			Python is already used at the Astrogeology Science Center, and there 
