@@ -1,104 +1,619 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-        <!-- Required meta tags for bootstrap -->
-        <meta charset="utf-8">
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        >
-        <title>ASC Processing Pipeline - Team Osiris</title>
 
-        <!-- Bootstrap JS -->
-        <script src="./js/jquery.min.js"></script>
-        <script src="./js/popper.min.js"></script>
-        <script src="./js/bootstrap.min.js"></script>
-        <script src="./js/main.js"></script>
 
-        <link rel="stylesheet" href="./CSS/bootstrap.min.css">
-        <link rel="stylesheet" href="CSS/main.css">
-        <link rel="stylesheet" href="./CSS/btn.css">
-        <link rel="stylesheet" href="./CSS/logo.css">
-    </head>
-	<body class="bg-main-gradient fg-main-color">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <!-- Navbar logo -->
-            <button class="navbar-brand" onclick="onTabChanged('./pages/home.html')">
-                <img
-                    src="./images/osiris-logo-transparent.png"
-                    alt="Team Osiris logo"
-                    width="50rem"
-                >
-            </button>
-            <!-- This is the "menu" button when the site is on a phone -->
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<head>
+  <title>USGS Processing Pipeline</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="assets/js/plugins/moment.min.js"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!--  Google Maps Plugin  -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Kit CSS -->
+  <link href="assets/css/material-kit.css" rel="stylesheet" />
+</head>
 
-            <!-- This is the menu content when the site is on a phone; On
-            a normal screen, it's the top bar -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item my-2">
-                        <button class="btn btn-primary" onclick="onTabChanged('./pages/desc.html')">
-                            Project Description
-                        </button>
-                    </li>
-                    <li class="nav-item my-2">
-                        <button class="btn btn-primary" onclick="onTabChanged('./pages/req.html')">
-                            Requirements
-                        </button>
-                    </li>
-                    <li class="nav-item my-2">
-                        <button class="btn btn-primary" onclick="onTabChanged('./pages/soln.html')">
-                            Solution
-                        </button>
-                    </li>
-                    <li class="nav-item my-2">
-                        <button class="btn btn-primary" onclick="onTabChanged('./pages/tech.html')">
-                            Technologies
-                        </button>
-                    </li>
-                    <li class="nav-item my-2">
-                        <button class="btn btn-primary" onclick="onTabChanged('./pages/sched.html')">
-                            Schedule
-                        </button>
-                    </li>
-					<li class="nav-item my-2">
-                        <button class="btn btn-primary" onclick="onTabChanged('./pages/about.html')">
-                            About
-                        </button>
-                    </li>
-                    <li class="nav-item my-2">
-                        <button class="btn btn-primary" onclick="onTabChanged('./pages/res.html')">
-                            Resources
-                        </button>
-                    </li>
-                    <li class="nav-item my-2">
-                        <a
-                            class="btn btn-primary"
-                            href="https://github.com/OsirisCapstone2020"
-                            target="_blank"
-                            role="button"
-                        >
-                            Codebase
-                        </a>
-                    </li>
-                </ul>
+<body>
+  <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
+    <div class="container">
+      <div class="navbar-translate">
+        <img class="img-fluid" src="./assets/img/osiris_icon3_glow.png" alt="team logo" width="80" height="80">
+        <a class="navbar-brand" href="index.html">
+          Team Osiris </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#project-description" class="nav-link">
+              Project Description
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#team" class="nav-link">
+              Our Team
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#sponsors" class="nav-link">
+              Sponsors
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#requirements" class="nav-link">
+              Requirements
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#solution" class="nav-link">
+              Solution
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#technologies" class="nav-link">
+              Technologies
+            </a>
+          </li>
+          <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+              <i class="material-icons">source</i>
+              Resources
+            </a>
+            <div class="dropdown-menu dropdown-with-icons">
+              <a href="/assets/files/schedule.pdf" class="dropdown-item">
+                <i class="material-icons">schedule</i> Schedule
+              </a>
+              <a href="/assets/files/osiris-team-inventory.pdf" class="dropdown-item">
+                <i class="material-icons">inventory</i> Team Inventory
+              </a>
+              <a href="/assets//files/osiris-team-standards.pdf" class="dropdown-item">
+                <i class="material-icons">content_paste</i> Team Standards
+              </a>
+              <a href="/assets/files/osiris-requirements-doc-signed.pdf" class="dropdown-item">
+                <i class="material-icons">gavel</i> Requirments Contract
+              </a>
+              <a href="https://www.youtube.com/watch?v=9rLzqzUyhNc" class="dropdown-item">
+                <i class="material-icons">smart_display</i> Design Review 1
+              </a>
+              <a href="https://www.youtube.com/watch?v=9rLzqzUyhNc" class="dropdown-item">
+                <i class="material-icons">smart_display</i> Design Review 2
+              </a>
+              <a href="https://www.youtube.com/watch?v=hZypUtCYcwk" class="dropdown-item">
+                <i class="material-icons">smart_display</i> Design Review 3
+              </a>
             </div>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/OsirisCapstone2020" class="btn btn-link btn-just-icon"><i
+                class="fa fa-github"></i></a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="page-header header-filter" data-parallax="true"
+    style="background-image: url('assets/img/mars_twin_peaks.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 ml-auto mr-auto">
+          <div class="brand text-center">
+            <img class="img-fluid" src="./assets/img/osiris_icon3_glow.png" alt="team logo" width="500" height="500">
+            <h1>USGS Image Processing Pipeline</h1>
+            <h3 class="text-center">Transforming planetary images into science-ready data.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="container" id="project-description">
+      <div class="section text-center">
+        <h2 class="title">Our Project</h2>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hZypUtCYcwk" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="section">
+          <h5 class="content">
+            Spacecraft missions from around the world have acquired enormous numbers of images and data about the
+            planets
+            and their satellites. Scientists need an easy way to manipulate spacecraft data in order to support
+            planetary
+            rover missions and the eventual human exploration of other worlds.
 
-        <!-- Main content -->
-        <!-- Pages are loaded here depending upon which tab is clicked -->
-        <div id="content" class="container-fluid mt-5"></div>
-	</body>
+          </h5>
+          <h5 class="content">
+            Planetary scientists are unable to work with raw data from space probes. Satellite and rover data need to be
+            manipulated in order to produce science ready images. Currently there exists no easy way to “set and forget”
+            a
+            job that automates the conversion of raw planetary data.
+
+          </h5>
+          <h5 class="content">
+            With the IPP, we have developed a web application that will serve as an easy-to-use drag and drop interface
+            for planetary image processing. Processing jobs will take the form of a pipeline, or set of steps, that
+            researchers and scientists can use to run, save, and share workflows.
+          </h5>
+
+          <h5 class="content">
+            Our web application utilizes Directed, Acyclic Graph (DAG) concepts to make the user experience as easy as
+            possible. Instead of having to run a single processing command at a time, users can drag and drop multiple
+            commands into the DAG and connect them as they see fit. The commands are easily configurable using forms in
+            our UI, and DAGs can easily be saved for reuse and shared with other researchers.
+
+          </h5>
+          <h5 class="content">
+            In an environment where the speed in which we gather our data is just as important as the data itself,
+            USGS’s
+            Image Processing Pipeline will not only aid in our understanding of other worlds, but increase the
+            efficiency
+            of planetary research.
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="team">
+      <div class="section text-center align-content-md-stretch">
+        <h2 class="text-center title">Our Team</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="card card-plain">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <img src="../assets/img/faces/Evin.png" alt="Thumbnail Image"
+                    class="img-raised rounded-circle img-fluid" height="100" width="100">
+                </div>
+                <h4 class="card-title">Evin Dunn
+                  <br>
+                  <small>Team Lead</small>
+                </h4>
+                <div class="card-body">
+
+                  <ul class="team-ul">
+                    <li>
+                      <p class="card-description">
+                        Python development and scripting
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Full stack Javascript
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Database administration
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Containers
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer justify-content-center">
+                  <a href="https://github.com/evindunn" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/evin-dunn-b39a02158/" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="card card-plain">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <img src="../assets/img/faces/Darius.png" alt="Thumbnail Image"
+                    class="img-raised rounded-circle img-fluid" height="100" width="100">
+                </div>
+                <h4 class="card-title">Darius Dumel
+                  <br>
+                  <small>Front End Dev</small>
+                  <br>
+                  <small>Client Communicator</small>
+                </h4>
+                <div class="card-body">
+                  <ul class="team-ul">
+                    <li>
+                      <p class="card-description">
+                        Mobile development
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Database administration
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        UI design
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Django development
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer justify-content-center">
+                  <a href="https://github.com/DariusDumel" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/darius-dumel-7b874427/" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="card card-plain">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <img src="../assets/img/faces/Sara.png" alt="Thumbnail Image"
+                    class="img-raised rounded-circle img-fluid" height="100" width="100">
+                </div>
+                <h4 class="card-title">Sara Huber
+                  <br>
+                  <small>Back End Dev</small>
+                  <br>
+                  <small>Recorder</small>
+                </h4>
+                <div class="card-body">
+                  <ul class="team-ul">
+                    <li>
+                      <p class="card-description">
+                        Python development
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Web development
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Agile development
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer justify-content-center">
+                  <a href="https://github.com/skh258" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/sara-huber-1a88071a1/" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="card card-plain">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <img src="../assets/img/faces/Milton.png" alt="Thumbnail Image"
+                    class="img-raised rounded-circle img-fluid" height="100" width="100">
+                </div>
+                <h4 class="card-title">Milton Ibera
+                  <br>
+                  <small>Back End Dev</small>
+                  <br>
+                  <small>Release Manager</small>
+                </h4>
+                <div class="card-body">
+                  <ul class="team-ul">
+                    <li>
+                      <p class="card-description">
+                        Agile development
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Full stack web
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Full stack mobile
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer justify-content-center">
+                  <a href="https://github.com/mmi22" class="btn btn-link btn-just-icon"><i class="fa fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/milton-ibera-b28304192" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="card card-plain">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <img src="../assets/img/faces/Rebecca.png" alt="Thumbnail Image"
+                    class="img-raised rounded-circle img-fluid" height="100" width="100">
+                </div>
+                <h4 class="card-title">Rebecca Legget
+                  <br>
+                  <small>ISIS3 Integration Lead</small>
+                </h4>
+                <div class="card-body">
+                  <ul class="team-ul">
+                    <li>
+                      <p class="card-description">
+                        Web development
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Pyhton development
+                      </p>
+                    </li>
+                    <li>
+                      <p class="card-description">
+                        Java development
+                      </p>
+                  </ul>
+                </div>
+                <div class="card-footer justify-content-center">
+                  <a href="https://github.com/robotprogrammer22" class="btn btn-link btn-just-icon"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <div class="card card-plain">
+                <div class="col-md-6 ml-auto mr-auto">
+                  <img src="../assets/img/faces/Fabio.jpg" alt="Thumbnail Image"
+                    class="img-raised rounded-circle img-fluid" height="100" width="100">
+                </div>
+                <h4 class="card-title">Fabio Santos
+                  <br>
+                  <small>Project Mentor</small>
+                </h4>
+                <div class="card-body">
+                  <p class="card-description">
+                    AI Researcher (Representation of Knowledge and Reasoning) and Software Engineering Researcher
+                    (Helping newcomers to contribute to Open Source Software), CIO,
+                    developer, Oracle and PostgreSQL DBA.
+                  </p>
+                </div>
+                <div class="card-footer justify-content-center">
+                  <a href="https://www.linkedin.com/in/f%C3%A1bio-marcos-santos-4bb72b7"
+                    class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="sponsors">
+      <h2 class="section title text-center">Our Sponsors</h2>
+      <div class="row">
+        <div class="col-md-5 mr-auto">
+          <img class="img-fluid" src="assets/img/USGS_logo.png" alt="usgs logo" height="400" width="400">
+          <div class="section section-description">
+            <h4 class="content">
+              <a href="https://www.usgs.gov/centers/astrogeology-science-center">USGS Astrogeology Science Center</a>
+              main mission is to provide a national resource for the integration of
+              planetary geoscience, cartography, and remote sensing to enable our ongoing investigation of our solar
+              system.
+              <br>
+            </h4>
+            <h4 class="content">
+              In short they collect and store a vast amount of planetary science data.
+            </h4>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="team-member">
+            <div class="card card-plain">
+              <div class="col-md-6 ml-auto mr-auto">
+                <img src="../assets/img/faces/Trent.jpg" alt="Thumbnail Image"
+                  class="img-raised rounded-circle img-fluid" height="200" width="200">
+              </div>
+              <h3 class="card-title">Trent Hare
+              </h3>
+              <div class="card-body">
+                <p class="card-description">
+                  Development of Geographic Information Systems (GISs) including; GIS web sites, tools, and
+                  tutorials for researchers. Compiles Earth and planetary datasets for release and publication
+                  via
+                  ArcMap Server and on-line OGC interfaces for NASA's Planetary Geology and Geophysics, Lunar
+                  Mapping and Modeling Project, Applied Information Systems Research Program, Mars Data
+                  Analysis,
+                  USAID, and other NASA research programs.
+                </p>
+              </div>
+              <div class="card-footer justify-content-center">
+                <a href="https://github.com/evindunn" class="btn btn-link btn-just-icon"><i
+                    class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/evin-dunn-b39a02158/" class="btn btn-link btn-just-icon"><i
+                    class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="team-member">
+            <div class="card card-plain">
+              <div class="col-md-6 ml-auto mr-auto">
+                <img src="../assets/img/faces/Scott.jpg" alt="Thumbnail Image"
+                  class="img-raised rounded-circle img-fluid" height="200" width="200">
+              </div>
+              <h3 class="card-title">Scott Akins
+              </h3>
+              <div class="card-body">
+                <p class="card-description">
+                  My current role involves project management and software development to provide cloud based searching,
+                  processing and analysis tools for planetary imagery data taken from remote sensing missions such as
+                  Viking and Mars Reconnaissance Orbiter.
+                </p>
+              </div>
+              <div class="card-footer justify-content-center">
+                <a href="https://github.com/evindunn" class="btn btn-link btn-just-icon"><i
+                    class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/evin-dunn-b39a02158/" class="btn btn-link btn-just-icon"><i
+                    class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="requirements">
+      <h2 class="section text-center title">Requirements</h2>
+      <div class="section">
+        <div class="row align-center">
+          <div class="card col-md-3 bg-primary" style="margin-left: .1rem; margin-right: 0rem;">
+            <div class="card-body" style="padding-left: 0rem; padding-right: 0rem;">
+              <h4 class="card-title">Directed, Acyclic Graphs</h4>
+              <p class="card-text">Images will be processed as a pipeline, or a directed, acyclic graph of image
+                processing steps. </p>
+            </div>
+          </div>
+          <div class="card col-md-2 bg-primary" style="margin-left: .1rem; margin-right: 0rem;">
+            <div class="card-body" style="padding-left: 0rem; padding-right: 0rem;">
+              <h4 class="card-title">Custom User DAGs</h4>
+              <p class="card-text">Users will build custom graphs in order to represent the full process of manipulating
+                their image data.</p>
+            </div>
+          </div>
+          <div class="card col-md-2 bg-primary" style="margin-left: .1rem; margin-right: 0rem;">
+            <div class="card-body" style="padding-left: 0rem; padding-right: 0rem;">
+              <h4 class="card-title">Backend Server</h4>
+              <p class="card-text">Graphs will be send to a processing server, along with input images.</p>
+            </div>
+          </div>
+          <div class="card col-md-2 bg-primary" style="margin-left: .1rem; margin-right: 0rem;">
+            <div class="card-body" style="padding-left: 0rem; padding-right: 0rem;">
+              <h4 class="card-title">Image Input</h4>
+              <p class="card-text">Users will upload one or more images as input.</p>
+            </div>
+          </div>
+          <div class="card col-md-2 bg-primary" style="margin-left: .1rem; margin-right: 0rem;">
+            <div class="card-body" style="padding-left: 0rem; padding-right: 0rem;">
+              <h4 class="card-title">Output</h4>
+              <p class="card-text">Users will choose a customizable output area.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="solution">
+      <h2 class="section text-center title">Solution</h2>
+      <div class="img-container">
+        <img src="/assets/img/frontend_banner.png" alt="frontend_banner">
+      </div>
+      <div class="section row">
+        <div class="col-md-6">
+          <h4 class="content">
+            We have created a web-based graphical interface for users to interact with the pipeline. Like the original
+            solution, users can choose images through Pilot, which will then be processed through the pipeline. To make
+            the user interface, we use n8n.io and create nodes for ISIS3 commands. Users are able to drag and drop
+            these blocks into the diagram in any order. The user are able to see the current progress of the
+            pipeline, and . We will have intermediate storage between each step,
+            which will allow us to use the output of one function as the input to another.
+          </h4>
+        </div>
+        <div class="col-md-6">
+          <div class="img-container">
+            <img class="img-fluid" src="/assets/img/TechIntergrationDiagram_v4.png"
+              alt="Technologies integration diagram">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="technologies">
+      <h2 class="section text-center title">Technologies</h2>
+      <div class="img-container align-content-center">
+        <img class="img-fluid" src="/assets/img/tech_banner.png" alt="pyhton logo">
+      </div>
+      <div class="section">
+        <ul class="list-group-flush">
+          <li class=" list-group-item">
+            <a href="https://n8n.io/"><b>n8n:</b></a> To provide a web interface, we decided to use N8N. N8N provides an
+            existing node and graphing interface, which can be modified for our uses. We will
+            add nodes for functions in ISIS, which the users will
+            be able to drag and drop into place in the graph.
+          </li>
+          <li class="list-group-item">
+            <a href="https://min.io/"> <b>Minio:</b></a> In order for the output of one node to be used as the input to
+            another, an intermediate storage step was needed. We decided to use an Minio S3, which is compatible with
+            Amazon S3. This storage server will
+            allow us to store data between each step of the pipeline.
+          </li>
+          <li class="list-group-item">
+            <a href="https://www.python.org/"><b>Python:</b></a> For our main programming language, we decided to use
+            Python.
+            Our
+            team memebers are the most
+            familiar with Python, and there is a library for ISIS written in Python (Pysis). We will use Python to call
+            ISIS3 commands in our pipeline
+          </li>
+          <li class="list-group-item">
+            <a href="https://github.com/USGS-Astrogeology/pysis"><b>Pysis:</b></a>Pysis is a library for calling ISIS3
+            commands in Python. We will the
+            Pysis library to call the
+            commands in our pipeline.
+          </li>
+          <li class="list-group-item">
+            <a href="https://nodejs.org/en/"><b>NodeJS:</b></a>Since N8N uses NodeJS, in order to modify the N8N
+            interface we will
+            need to use NodeJS.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer class="footer footer-default">
+    <div class="container">
+      <nav class="float-left">
+        <ul>
+          <li>
+            <a href="https://www.cefns.nau.edu/~edo/Classes/CS_Capstone/Projects/F20/F20_teams.html">
+              NAU Capstone | Team Osiris
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, made with <i class="material-icons">favorite</i> Team Osiris.
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
