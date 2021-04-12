@@ -483,14 +483,11 @@ section {
 }
 
 @font-face {
-  font-family: "Couture";
-  src: url("/assets/fonts/couture-bld.otf");
+  font-family: 'Couture';
+  src: url('couture-bld.otf');
 }
 
-@font-face {
-  font-family: "Open Sans";
-  src: url("/assets/fonts/OpenSans-SemiBold.ttf");
-}
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 body {
   margin: 0;
@@ -4397,7 +4394,7 @@ tbody.collapse.show {
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
   font-size: 1.25rem;
-  font-family: "Couture";
+  font-family: 'Couture';
   line-height: inherit;
   white-space: nowrap;
 }
@@ -15477,7 +15474,7 @@ small,
 .footer-big h5,
 .footer-big h4,
 .media .media-heading {
-  font-family:"Open Sans";
+  font-family:'Open Sans';
 }
 
 .title,
